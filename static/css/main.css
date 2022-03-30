@@ -25,8 +25,26 @@ table {
     opacity: 0.5;
 }
 
+.event {
+    border: 2px solid transparent;
+    border-radius: 100px;
+    background-color: lightcoral;
+}
+
+.calendar_event {
+    margin-left: 20px;
+}
+
 .bold {
     font-weight: bold;
+}
+
+.btn_save {
+    background-color: lightcoral;
+}
+
+.btn_save:hover {
+    opacity: 0.8;
 }
 
 .calendar_nav_btn {

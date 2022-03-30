@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
-    <script src="static/js/calendar.js"></script>
+    <script src="static/js/Calendar.js"></script>
+    <script src="static/js/Event.js"></script>
     <script src="static/js/main.js"></script>
 </head>
 <body>
@@ -63,13 +64,13 @@
                     <tbody>
                         
                         <tr>
-                            <td onclick="focusOnDay('row_1_mon')" id="row_1_mon" class="prev_month calendar_days text-center">26</td>
-                            <td onclick="focusOnDay('row_1_tue')" id="row_1_tue" class="prev_month calendar_days text-center">27</td>
-                            <td onclick="focusOnDay('row_1_wed')" id="row_1_wed" class="prev_month calendar_days text-center">28</td>
-                            <td onclick="focusOnDay('row_1_thu')" id="row_1_thu" class="prev_month calendar_days text-center">29</td>
-                            <td onclick="focusOnDay('row_1_fri')" id="row_1_fri" class="prev_month calendar_days text-center">30</td>
-                            <td onclick="focusOnDay('row_1_sat')" id="row_1_sat" class="prev_month calendar_days text-center">31</td>
-                            <td onclick="focusOnDay('row_1_sun')" id="row_1_sun" class="bold alendar_days text-center">1</td>
+                            <td onclick="focusOnDay('row_1_mon')" id="row_1_mon" class="calendar_days text-center">26</td>
+                            <td onclick="focusOnDay('row_1_tue')" id="row_1_tue" class="calendar_days text-center">27</td>
+                            <td onclick="focusOnDay('row_1_wed')" id="row_1_wed" class="calendar_days text-center">28</td>
+                            <td onclick="focusOnDay('row_1_thu')" id="row_1_thu" class="calendar_days text-center">29</td>
+                            <td onclick="focusOnDay('row_1_fri')" id="row_1_fri" class="calendar_days text-center">30</td>
+                            <td onclick="focusOnDay('row_1_sat')" id="row_1_sat" class="calendar_days text-center">31</td>
+                            <td onclick="focusOnDay('row_1_sun')" id="row_1_sun" class="bold calendar_days text-center">1</td>
                         </tr>
                         <tr>
                             <td onclick="focusOnDay('row_2_mon')" id="row_2_mon" class="calendar_days text-center">2</td>
@@ -82,7 +83,7 @@
                         </tr>
                         <tr>
                             <td onclick="focusOnDay('row_3_mon')" id="row_3_mon" class="calendar_days text-center">9</td>
-                            <td onclick="focusOnDay('row_3_tue')" id="row_3_tue" class="event calendar_days text-center">10</td>
+                            <td onclick="focusOnDay('row_3_tue')" id="row_3_tue" class="calendar_days text-center">10</td>
                             <td onclick="focusOnDay('row_3_wed')" id="row_3_wed" class="calendar_days text-center">11</td>
                             <td onclick="focusOnDay('row_3_thu')" id="row_3_thu" class="calendar_days text-center">12</td>
                             <td onclick="focusOnDay('row_3_fri')" id="row_3_fri" class="calendar_days text-center">13</td>
@@ -95,12 +96,12 @@
                             <td onclick="focusOnDay('row_4_wed')" id="row_4_wed" class="calendar_days text-center">18</td>
                             <td onclick="focusOnDay('row_4_thu')" id="row_4_thu" class="calendar_days text-center">19</td>
                             <td onclick="focusOnDay('row_4_fri')" id="row_4_fri" class="calendar_days text-center">20</td>
-                            <td onclick="focusOnDay('row_4_sat')" id="row_4_sat" class="event calendar_days text-center">21</td>
+                            <td onclick="focusOnDay('row_4_sat')" id="row_4_sat" class="calendar_days text-center">21</td>
                             <td onclick="focusOnDay('row_4_sun')" id="row_4_sun" class="bold calendar_days text-center">22</td>
                         </tr>
 
                         <tr>
-                            <td onclick="focusOnDay('row_5_mon')" id="row_5_mon" class="current-day event calendar_days text-center">23</td>
+                            <td onclick="focusOnDay('row_5_mon')" id="row_5_mon" class="current-day calendar_days text-center">23</td>
                             <td onclick="focusOnDay('row_5_tue')" id="row_5_tue" class="calendar_days text-center">24</td>
                             <td onclick="focusOnDay('row_5_wed')" id="row_5_wed" class="calendar_days text-center">25</td>
                             <td onclick="focusOnDay('row_5_thu')" id="row_5_thu" class="calendar_days text-center">26</td>
@@ -132,7 +133,7 @@
 
                 <div id="events">
 
-                    <!--<p style="font-size:1.2vw;" class="koledar_dogodki uk-text-left uk-margin-large-left">- Srečanje skupine za rast</p>-->
+                    <!--<p class="calendar_event text-left">- Meeting</p>-->
 
                 </div>
 
@@ -142,7 +143,7 @@
         <div class="row additional_inputs_container">
             <div class="col-lg-6">
 
-                <p class="input_title text-center">Set date</p>
+                <p class="input_title text-center">Change date</p>
 
                 <form class="form">
                     <div class="form-group mb-2 change_date_form_field">
@@ -168,7 +169,7 @@
                         <input id="year_input" class="form-control" id="input_year" placeholder="2022">
                     </div>
                     <div class="form-group change_date_form_field">
-                        <a onclick="changeCurDate()" class="btn btn-primary mb-2">Change date</a>
+                        <a onclick="changeCurDate()" class="btn btn_save mb-2">Change date</a>
                     </div>
                 </form>
 

@@ -6,6 +6,8 @@ class Calendar {
         //months are 0 indexed
         this.curMonth = this.date.getMonth();
         this.curYear = this.date.getFullYear();
+
+        this.events = [];
     }
 
     // puts calendar into next month
@@ -34,8 +36,7 @@ class Calendar {
     }
 
     // 0 - sunday, ... , 6 - saturday
-    getDayName(day, month = this.curMonth, year = this.curYear) {
-        // we have to add 1, beacuse months are 0 indexed
+    getDayIndex(day, month = this.curMonth, year = this.curYear) {
         return new Date(year, month, day).getDay();
     }
 
@@ -55,6 +56,20 @@ class Calendar {
             case 11: return "December";
             default: return "";
         }
+    }
+
+    addEvent(curEvent) {
+        this.events.push(curEvent);
+    }
+
+    getEvents(day, month, year) {
+        let events = [];
+        this.events.forEach(e => {
+            if (e.day == day && e.month == month && e.year == year) {
+                events.push(e);
+            }
+        })
+        return events;
     }
 
   }
