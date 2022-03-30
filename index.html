@@ -20,133 +20,163 @@
 </head>
 <body>
 
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="row">
-                <div class="col-4">
+    <div class="container">
 
-                    <p onclick="putInPrevMonth()" id="calendar_prev_btn" class="text-center calendar_nav_btn">&#8249;</p>
+        <div class="row calendar_container">
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-4">
 
+                        <p onclick="putInPrevMonth()" id="calendar_prev_btn" class="text-center calendar_nav_btn">&#8249;</p>
+
+                    </div>
+                    <div class="col-4">
+
+                        <p id="calendar_month" style="font-size:3vw;" class="text-center calendar_month">September</p>
+
+                    </div>
+                    <div class="col-4">
+
+                        <p onclick="putInNextMonth()" id="calendar_next_btn" class="text-center calendar_nav_btn">&#8250;</p>
+
+                    </div>
                 </div>
-                <div class="col-4">
 
-                    <p id="calendar_month" style="font-size:3vw;" class="text-center">September</p>
+                <table>
 
-                </div>
-                <div class="col-4">
+                    <thead>
+                        
+                        <tr>
+                            
+                            <td class="bold calendar_day_names text-center">Mo</td>
+                            <td class="bold calendar_day_names text-center">Tu</td>
+                            <td class="bold calendar_day_names text-center">We</td>
+                            <td class="bold calendar_day_names text-center">Th</td>
+                            <td class="bold calendar_day_names text-center">Fr</td>
+                            <td class="bold calendar_day_names text-center">Sa</td>
+                            <td class="bold calendar_day_names text-center">Su</td>
 
-                    <p onclick="putInNextMonth()" id="calendar_next_btn" class="text-center calendar_nav_btn">&#8250;</p>
+                        </tr>
 
-                </div>
+                    </thead>
+
+                    <tbody>
+                        
+                        <tr>
+                            <td onclick="focusOnDay('row_1_mon')" id="row_1_mon" class="prev_month calendar_days text-center">26</td>
+                            <td onclick="focusOnDay('row_1_tue')" id="row_1_tue" class="prev_month calendar_days text-center">27</td>
+                            <td onclick="focusOnDay('row_1_wed')" id="row_1_wed" class="prev_month calendar_days text-center">28</td>
+                            <td onclick="focusOnDay('row_1_thu')" id="row_1_thu" class="prev_month calendar_days text-center">29</td>
+                            <td onclick="focusOnDay('row_1_fri')" id="row_1_fri" class="prev_month calendar_days text-center">30</td>
+                            <td onclick="focusOnDay('row_1_sat')" id="row_1_sat" class="prev_month calendar_days text-center">31</td>
+                            <td onclick="focusOnDay('row_1_sun')" id="row_1_sun" class="bold alendar_days text-center">1</td>
+                        </tr>
+                        <tr>
+                            <td onclick="focusOnDay('row_2_mon')" id="row_2_mon" class="calendar_days text-center">2</td>
+                            <td onclick="focusOnDay('row_2_tue')" id="row_2_tue" class="calendar_days text-center">3</td>
+                            <td onclick="focusOnDay('row_2_wed')" id="row_2_wed" class="calendar_days text-center">4</td>
+                            <td onclick="focusOnDay('row_2_thu')" id="row_2_thu" class="calendar_days text-center">5</td>
+                            <td onclick="focusOnDay('row_2_fri')" id="row_2_fri" class="calendar_days text-center">6</td>
+                            <td onclick="focusOnDay('row_2_sat')" id="row_2_sat" class="calendar_days text-center">7</td>
+                            <td onclick="focusOnDay('row_2_sun')" id="row_2_sun" class="bold calendar_days text-center">8</td>
+                        </tr>
+                        <tr>
+                            <td onclick="focusOnDay('row_3_mon')" id="row_3_mon" class="calendar_days text-center">9</td>
+                            <td onclick="focusOnDay('row_3_tue')" id="row_3_tue" class="event calendar_days text-center">10</td>
+                            <td onclick="focusOnDay('row_3_wed')" id="row_3_wed" class="calendar_days text-center">11</td>
+                            <td onclick="focusOnDay('row_3_thu')" id="row_3_thu" class="calendar_days text-center">12</td>
+                            <td onclick="focusOnDay('row_3_fri')" id="row_3_fri" class="calendar_days text-center">13</td>
+                            <td onclick="focusOnDay('row_3_sat')" id="row_3_sat" class="calendar_days text-center">14</td>
+                            <td onclick="focusOnDay('row_3_sun')" id="row_3_sun" class="bold calendar_days text-center">15</td>
+                        </tr>
+                        <tr>
+                            <td onclick="focusOnDay('row_4_mon')" id="row_4_mon" class="calendar_days text-center">16</td>
+                            <td onclick="focusOnDay('row_4_tue')" id="row_4_tue" class="calendar_days text-center">17</td>
+                            <td onclick="focusOnDay('row_4_wed')" id="row_4_wed" class="calendar_days text-center">18</td>
+                            <td onclick="focusOnDay('row_4_thu')" id="row_4_thu" class="calendar_days text-center">19</td>
+                            <td onclick="focusOnDay('row_4_fri')" id="row_4_fri" class="calendar_days text-center">20</td>
+                            <td onclick="focusOnDay('row_4_sat')" id="row_4_sat" class="event calendar_days text-center">21</td>
+                            <td onclick="focusOnDay('row_4_sun')" id="row_4_sun" class="bold calendar_days text-center">22</td>
+                        </tr>
+
+                        <tr>
+                            <td onclick="focusOnDay('row_5_mon')" id="row_5_mon" class="current-day event calendar_days text-center">23</td>
+                            <td onclick="focusOnDay('row_5_tue')" id="row_5_tue" class="calendar_days text-center">24</td>
+                            <td onclick="focusOnDay('row_5_wed')" id="row_5_wed" class="calendar_days text-center">25</td>
+                            <td onclick="focusOnDay('row_5_thu')" id="row_5_thu" class="calendar_days text-center">26</td>
+                            <td onclick="focusOnDay('row_5_fri')" id="row_5_fri" class="calendar_days text-center">27</td>
+                            <td onclick="focusOnDay('row_5_sat')" id="row_5_sat" class="calendar_days text-center">28</td>
+                            <td onclick="focusOnDay('row_5_sun')" id="row_5_sun" class="bold calendar_days text-center">29</td>
+                        </tr>
+                        <tr>
+                            <td onclick="focusOnDay('row_6_mon')" id="row_6_mon" class="calendar_days text-center">30</td>
+                            <td onclick="focusOnDay('row_6_tue')" id="row_6_tue" class="next_month calendar_days text-center">1</td>
+                            <td onclick="focusOnDay('row_6_wed')" id="row_6_wed" class="next_month calendar_days text-center">2</td>
+                            <td onclick="focusOnDay('row_6_thu')" id="row_6_thu" class="next_month calendar_days text-center">3</td>
+                            <td onclick="focusOnDay('row_6_fri')" id="row_6_fri" class="next_month calendar_days text-center">4</td>
+                            <td onclick="focusOnDay('row_6_sat')" id="row_6_sat" class="next_month calendar_days text-center">5</td>
+                            <td onclick="focusOnDay('row_6_sun')" id="row_6_sun" class="bold next_month calendar_days text-center">6</td>
+                        </tr>
+
+                    </tbody>
+                </table>
             </div>
 
-            <table>
+            <div class="col-lg-6">
 
-                <thead>
-                    
-                    <tr>
-                        
-                        <td class="calendar_day_names text-center">Mo</td>
-                        <td class="calendar_day_names text-center">Tu</td>
-                        <td class="calendar_day_names text-center">We</td>
-                        <td class="calendar_day_names text-center">Th</td>
-                        <td class="calendar_day_names text-center">Fr</td>
-                        <td class="calendar_day_names text-center">Sa</td>
-                        <td class="calendar_day_names text-center">Su</td>
+                <p id="calendar_date" class="text-center">23. September 2022</p>
 
-                    </tr>
+                <p id="calendar_day" class="text-center">Moday</p>
 
-                </thead>
+                <p id="calendar_events" class="text-left">Events:</p>
 
-                <tbody>
-                    
-                    <tr>
-                        <td onclick="changeCurDay('row_1_mon')" id="row_1_mon" class="prev-month calendar_days text-center">26</td>
-                        <td onclick="changeCurDay('row_1_tue')" id="row_1_tue" class="prev-month calendar_days text-center">27</td>
-                        <td onclick="changeCurDay('row_1_wed')" id="row_1_wed" class="prev-month calendar_days text-center">28</td>
-                        <td onclick="changeCurDay('row_1_thu')" id="row_1_thu" class="prev-month calendar_days text-center">29</td>
-                        <td onclick="changeCurDay('row_1_fri')" id="row_1_fri" class="prev-month calendar_days text-center">30</td>
-                        <td onclick="changeCurDay('row_1_sat')" id="row_1_sat" class="prev-month calendar_days text-center">31</td>
-                        <td onclick="changeCurDay('row_1_sun')" id="row_1_sun" class="calendar_days text-center">1</td>
-                    </tr>
-                    <tr>
-                        <td onclick="changeCurDay('row_2_mon')" id="row_2_mon" class="calendar_days text-center">2</td>
-                        <td onclick="changeCurDay('row_2_tue')" id="row_2_tue" class="calendar_days text-center">3</td>
-                        <td onclick="changeCurDay('row_2_wed')" id="row_2_wed" class="calendar_days text-center">4</td>
-                        <td onclick="changeCurDay('row_2_thu')" id="row_2_thu" class="calendar_days text-center">5</td>
-                        <td onclick="changeCurDay('row_2_fri')" id="row_2_fri" class="calendar_days text-center cur_viewed_day">6</td>
-                        <td onclick="changeCurDay('row_2_sat')" id="row_2_sat" class="calendar_days text-center">7</td>
-                        <td onclick="changeCurDay('row_2_sun')" id="row_2_sun" class="calendar_days text-center">8</td>
-                    </tr>
-                    <tr>
-                        <td onclick="changeCurDay('row_3_mon')" id="row_3_mon" class="calendar_days text-center">9</td>
-                        <td onclick="changeCurDay('row_3_tue')" id="row_3_tue" class="event calendar_days text-center">10</td>
-                        <td onclick="changeCurDay('row_3_wed')" id="row_3_wed" class="calendar_days text-center">11</td>
-                        <td onclick="changeCurDay('row_3_thu')" id="row_3_thu" class="calendar_days text-center">12</td>
-                        <td onclick="changeCurDay('row_3_fri')" id="row_3_fri" class="calendar_days text-center">13</td>
-                        <td onclick="changeCurDay('row_3_sat')" id="row_3_sat" class="calendar_days text-center">14</td>
-                        <td onclick="changeCurDay('row_3_sun')" id="row_3_sun" class="calendar_days text-center">15</td>
-                    </tr>
-                    <tr>
-                        <td onclick="changeCurDay('row_4_mon')" id="row_4_mon" class="calendar_days text-center">16</td>
-                        <td onclick="changeCurDay('row_4_tue')" id="row_4_tue" class="calendar_days text-center">17</td>
-                        <td onclick="changeCurDay('row_4_wed')" id="row_4_wed" class="calendar_days text-center">18</td>
-                        <td onclick="changeCurDay('row_4_thu')" id="row_4_thu" class="calendar_days text-center">19</td>
-                        <td onclick="changeCurDay('row_4_fri')" id="row_4_fri" class="calendar_days text-center">20</td>
-                        <td onclick="changeCurDay('row_4_sat')" id="row_4_sat" class="event calendar_days text-center">21</td>
-                        <td onclick="changeCurDay('row_4_sun')" id="row_4_sun" class="calendar_days text-center">22</td>
-                    </tr>
+                <div id="events">
 
-                    <tr>
-                        <td onclick="changeCurDay('row_5_mon')" id="row_5_mon" class="current-day event calendar_days text-center">23</td>
-                        <td onclick="changeCurDay('row_5_tue')" id="row_5_tue" class="calendar_days text-center">24</td>
-                        <td onclick="changeCurDay('row_5_wed')" id="row_5_wed" class="calendar_days text-center">25</td>
-                        <td onclick="changeCurDay('row_5_thu')" id="row_5_thu" class="calendar_days text-center">26</td>
-                        <td onclick="changeCurDay('row_5_fri')" id="row_5_fri" class="calendar_days text-center">27</td>
-                        <td onclick="changeCurDay('row_5_sat')" id="row_5_sat" class="calendar_days text-center">28</td>
-                        <td onclick="changeCurDay('row_5_sun')" id="row_5_sun" class="calendar_days text-center">29</td>
-                    </tr>
-                    <tr>
-                        <td onclick="changeCurDay('row_6_mon')" id="row_6_mon" class="calendar_days text-center">30</td>
-                        <td onclick="changeCurDay('row_6_tue')" id="row_6_tue" class="next-month calendar_days text-center">1</td>
-                        <td onclick="changeCurDay('row_6_wed')" id="row_6_wed" class="next-month calendar_days text-center">2</td>
-                        <td onclick="changeCurDay('row_6_thu')" id="row_6_thu" class="next-month calendar_days text-center">3</td>
-                        <td onclick="changeCurDay('row_6_fri')" id="row_6_fri" class="next-month calendar_days text-center">4</td>
-                        <td onclick="changeCurDay('row_6_sat')" id="row_6_sat" class="next-month calendar_days text-center">5</td>
-                        <td onclick="changeCurDay('row_6_sun')" id="row_6_sun" class="next-month calendar_days text-center">6</td>
-                    </tr>
+                    <!--<p style="font-size:1.2vw;" class="koledar_dogodki uk-text-left uk-margin-large-left">- Srečanje skupine za rast</p>-->
 
-                </tbody>
-            </table>
-
-
-            <form class="form-inline">
-                <div class="form-group mb-2">
-                    <input id="day_input" class="form-control" id="input_day" placeholder="1">
                 </div>
-                <div class="form-group mx-sm-3 mb-2">
-                    <select id="calendar_month_select" class="form-select">
-                        <option value="0">Januar</option>
-                        <option value="1">Ferbuar</option>
-                        <option value="2">Marec</option>
-                        <option value="3">April</option>
-                        <option value="4">Maj</option>
-                        <option value="5">Junij</option>
-                        <option value="6">Julij</option>
-                        <option value="7">Avgust</option>
-                        <option value="8">September</option>
-                        <option value="9">Oktober</option>
-                        <option value="10">November</option>
-                        <option value="11">December</option>
-                    </select>
-                </div>
-                <div class="form-group mb-2">
-                    <input id="year_input" class="form-control" id="input_year" placeholder="2022">
-                </div>
-                <div class="form-group">
-                    <a onclick="changeCurDate()" class="btn btn-primary mb-2">Change date</a>
-                </div>
-            </form>
+
+            </div>
         </div>
+
+        <div class="row additional_inputs_container">
+            <div class="col-lg-6">
+
+                <p class="input_title text-center">Set date</p>
+
+                <form class="form">
+                    <div class="form-group mb-2 change_date_form_field">
+                        <input id="day_input" class="form-control" id="input_day" placeholder="1">
+                    </div>
+                    <div class="form-group mb-2 change_date_form_field">
+                        <select id="calendar_month_select" class="form-select">
+                            <option value="0">January</option>
+                            <option value="1">February</option>
+                            <option value="2">March</option>
+                            <option value="3">April</option>
+                            <option value="4">Maj</option>
+                            <option value="5">June</option>
+                            <option value="6">July</option>
+                            <option value="7">August</option>
+                            <option value="8">September</option>
+                            <option value="9">October</option>
+                            <option value="10">November</option>
+                            <option value="11">December</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-2 change_date_form_field">
+                        <input id="year_input" class="form-control" id="input_year" placeholder="2022">
+                    </div>
+                    <div class="form-group change_date_form_field">
+                        <a onclick="changeCurDate()" class="btn btn-primary mb-2">Change date</a>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-lg-6">
+                <p class="input_title text-center">Import dates</p>
+            </div>
+        </div>
+
     </div>
 </body>

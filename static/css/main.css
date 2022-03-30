@@ -1,3 +1,7 @@
+body {
+    background-color: lightblue !important;
+}
+
 table {
     table-layout: fixed;
 
@@ -13,9 +17,43 @@ table {
     border-radius: 100px;
 }
 
+.prev_month {
+    opacity: 0.5;
+}
+
+.next_month {
+    opacity: 0.5;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 .calendar_nav_btn {
     cursor: pointer;
-    size: 20px;
+    font-size: 40px !important;
+}
+
+.calendar_month {
+    font-size: 40px !important;
+}
+
+#calendar_date {
+    font-size: 35px !important;
+    margin-top: 20px;
+}
+
+#calendar_day {
+    font-size: 30px !important;
+}
+
+#calendar_events {
+    font-size: 20px !important;
+    margin-left: 20px;
+}
+
+.input_title {
+    font-size: 35px !important;
 }
 
 .cur_viewed_day {
@@ -27,4 +65,21 @@ table {
     cursor: pointer;
     border: 2px solid blue;
     border-radius: 100px;
+}
+
+.change_date_form_field {
+    width: 100% !important;
+}
+
+.calendar_container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.additional_inputs_container {
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 10px;
 }
