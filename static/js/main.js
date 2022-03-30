@@ -3,6 +3,14 @@ let calendar = new Calendar();
 window.onload = function() {
     console.log("loaded")
 
+    //initialization
+    $('#calendar_month_select').selectpicker('render');
+
+    $('#calendar_month_select').on('change', function() {
+        calendar.curMonth = this.selectedIndex;
+        constructCalendar();
+    });
+
     constructCalendar();
 };
 
@@ -14,6 +22,22 @@ function putInNextMonth() {
 function putInPrevMonth() {
     calendar.prevMonth();
     constructCalendar();
+}
+
+function changeCurDate() {
+    let day = parseInt($("#day_input").val());
+    let month = parseInt($("#calendar_month_select").val());
+    let year = parseInt($("#year_input").val());
+
+    let curDate = new Date(year + "-" + month + "-" + day);
+
+    if (curDate.toString() !== "Invalid Date") {
+        calendar.curDay = day;
+        calendar.curMonth = month;
+        calendar.curYear = year;
+
+        constructCalendar();
+    }
 }
 
 function constructCalendar() {
@@ -60,6 +84,8 @@ function constructCalendar() {
         day -= 1;
     }
 
+    //$('#calendar_month_select').val(calendar.curMonth);
+    //$('#calendar_month_select').selectpicker('refresh');
     $('#calendar_month').html(calendar.getMonthName());
 }
 

@@ -1,3 +1,30 @@
+table {
+    table-layout: fixed;
+
+    border-collapse: separate !important;
+}
+
 .calendar_days {
-    padding: 30px 30px 30px 30px;
+    width: 1%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    /* otherwise calendar starts flickering when hovering through days */
+    border: 2px solid transparent;
+    border-radius: 100px;
+}
+
+.calendar_nav_btn {
+    cursor: pointer;
+    size: 20px;
+}
+
+.cur_viewed_day {
+    border: 2px solid lightgray;
+    border-radius: 100px;
+}
+
+.calendar_days:hover {
+    cursor: pointer;
+    border: 2px solid blue;
+    border-radius: 100px;
 }
