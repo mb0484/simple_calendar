@@ -2,7 +2,7 @@ let calendar = new Calendar();
 let curFocusedDayId = undefined;
 let todayDayId = undefined;
 
-//let HTML_FILE_URL = './events.txt';
+let HTML_FILE_URL = 'events.txt';
 
 window.onload = function() {
     //initialization
@@ -10,11 +10,9 @@ window.onload = function() {
 
 
     // load calendar events
-    /*$.get(HTML_FILE_URL, function(data) {
-        var fileData = $(data);
-
-        console.log(fileData)
-    });*/
+    fetch(HTML_FILE_URL)
+        .then(response => response.text())
+        .then(text => console.log(text))
 
 
     calendar.addEvent(new CalendarEvent(30, 2, 2022, "delanje koledarja"));
