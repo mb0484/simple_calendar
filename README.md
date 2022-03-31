@@ -4,4 +4,4 @@ Simple calendar, that is able to load and display events from provided 'events.t
 
 Calendar can be viewed and tested via: https://mb0484.github.io/simple_calendar/
 
-User can also use form to select and go to certain date.
+User can use form to select and go to certain date.
