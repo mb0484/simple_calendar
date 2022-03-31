@@ -79,6 +79,11 @@ table {
     border-radius: 100px;
 }
 
+.todays_day {
+    border: 2px solid lightslategray;
+    border-radius: 100px;
+}
+
 .calendar_days:hover {
     cursor: pointer;
     border: 2px solid blue;

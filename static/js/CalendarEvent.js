@@ -1,4 +1,4 @@
-class Event {
+class CalendarEvent {
     constructor (day, month, year, description) {
         this.day = day;
         this.month = month;
@@ -6,7 +6,7 @@ class Event {
         this.description = description;
     }
 
-    generateEventString() {
+    generateEventHtml() {
         return '<p class="calendar_event text-left">- ' + this.description + '</p>';
     }
 }

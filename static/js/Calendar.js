@@ -30,6 +30,12 @@ class Calendar {
         }
     }
 
+    isTodaysDate(day = this.curDay, month = this.curMonth, year = this.curYear) {
+        let date = new Date();
+
+        return day === date.getDate() && month === date.getMonth() && year === date.getFullYear();
+    }
+
     numDaysInMonth(month = this.curMonth, year = this.curYear) {
         // passing 0 will return us the last day in previous month
         return new Date(year, month + 1, 0).getDate();
@@ -62,7 +68,7 @@ class Calendar {
         this.events.push(curEvent);
     }
 
-    getEvents(day, month, year) {
+    getEvents(day = this.curDay, month = this.curMonth, year = this.curYear) {
         let events = [];
         this.events.forEach(e => {
             if (e.day == day && e.month == month && e.year == year) {
