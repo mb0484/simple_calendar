@@ -2,25 +2,36 @@ let calendar = new Calendar();
 let curFocusedDayId = undefined;
 let todayDayId = undefined;
 
-let HTML_FILE_URL = 'events.txt';
+const FILE_URL = 'events.txt';
 
 window.onload = function() {
-    //initialization
+    // initialization
     $('#calendar_month_select').selectpicker('render');
 
-
     // load calendar events
-    fetch(HTML_FILE_URL)
+    fetch(FILE_URL)
         .then(response => response.text())
-        .then(text => console.log(text))
-
-
-    calendar.addEvent(new CalendarEvent(30, 2, 2022, "delanje koledarja"));
-    calendar.addEvent(new CalendarEvent(31, 2, 2022, "oddaja koledarja"));
-    calendar.addEvent(new CalendarEvent(31, 2, 2022, "oddaja koledarja"));
+        .then(text => fillCalendarWithEvents(text))
 
     constructCalendar();
 };
+
+function fillCalendarWithEvents(eventData) {
+    for (let row of eventData.split("\n")) {
+        // Get event date
+        let day = row.split(";")[0].split(" ")[0];
+        let month = row.split(";")[0].split(" ")[1] - 1;
+        let year = row.split(";")[0].split(" ")[2];
+
+        // Get event description
+        let description = row.split(";")[1];
+
+        // Is looped event
+        let isLoopedEvent = row.split(";")[2] === "loop";
+
+        calendar.addEvent(new CalendarEvent(day, month, year, description, isLoopedEvent));
+    }
+}
 
 function putInNextMonth() {
     calendar.nextMonth();
@@ -165,16 +176,16 @@ function constructCalendar() {
     // we change it back
     calendar.prevMonth();
 
-    // change days for previous month days still seen on the calendar
-    day = calendar.numDaysInMonth(calendar.curMonth);
-
     // previous month day index is equal to the day index of first day of current month - 1
     curDayIdx = calendar.getDayIndex(1) - 1;
     // if we started current month with sunday (0), we have to fill all other days in week, indexes for these days are greater than zero and begin with saturday (6)
     curDayIdx = curDayIdx == -1 ? 6 : curDayIdx;
 
-     // we put calendar in previous month and then change it back
-     calendar.prevMonth();
+    // we put calendar in previous month and then change it back
+    calendar.prevMonth();
+
+    // change days for previous month days still seen on the calendar
+    day = calendar.numDaysInMonth(calendar.curMonth);
 
     for (curDayIdx; curDayIdx > 0; curDayIdx -= 1) {
         if (calendar.getEvents(day, calendar.curMonth, calendar.curYear).length > 0) {

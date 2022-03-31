@@ -1,1 +1,14 @@
-7 5 2022; Martins Birthday; loop
+7 5 2022;Martin's Birthday;loop
+8 2 2022;Prešernov dan;loop
+17 4 2022;Velika noč;noloop
+18 4 2022;Velikonočni ponedeljek;noloop
+27 4 2022;Dan upora proti ukopatorju;loop
+1 5 2022;Praznik dela;loop
+2 5 2022;Praznik dela;loop
+5 6 2022;Binkošti;loop
+25 6 2022;Dan državnosti;loop
+15 8 2022;Marijino vnebozetje;loop
+31 10 2022;Dan reformacije;loop
+1 11 2022;Dan spomina na mrtve;loop
+25 12 2022;Božič;loop
+26 12 2022;Dan samostojnosti in enotnosti;loop

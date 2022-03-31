@@ -141,13 +141,14 @@
         </div>
 
         <div class="row additional_inputs_container">
+            <div class="col-lg-3"></div>
             <div class="col-lg-6">
 
-                <p class="input_title text-center">Change date</p>
+                <p class="input_title text-center">Select date</p>
 
                 <form class="form">
                     <div class="form-group mb-2 change_date_form_field">
-                        <input id="day_input" class="form-control" id="input_day" placeholder="1">
+                        <input id="day_input" class="form-control" id="input_day" placeholder="day">
                     </div>
                     <div class="form-group mb-2 change_date_form_field">
                         <select id="calendar_month_select" class="form-select">
@@ -155,7 +156,7 @@
                             <option value="1">February</option>
                             <option value="2">March</option>
                             <option value="3">April</option>
-                            <option value="4">Maj</option>
+                            <option value="4">May</option>
                             <option value="5">June</option>
                             <option value="6">July</option>
                             <option value="7">August</option>
@@ -166,17 +167,15 @@
                         </select>
                     </div>
                     <div class="form-group mb-2 change_date_form_field">
-                        <input id="year_input" class="form-control" id="input_year" placeholder="2022">
+                        <input id="year_input" class="form-control" id="input_year" placeholder="year">
                     </div>
                     <div class="form-group change_date_form_field">
-                        <a onclick="changeCurDate()" class="btn btn_save mb-2">Change date</a>
+                        <a onclick="changeCurDate()" class="btn btn_save mb-2">Select date</a>
                     </div>
                 </form>
 
             </div>
-            <div class="col-lg-6">
-                <p class="input_title text-center">Import dates</p>
-            </div>
+            <div class="col-lg-3"></div>
         </div>
 
     </div>

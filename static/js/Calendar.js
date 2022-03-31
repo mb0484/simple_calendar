@@ -52,7 +52,7 @@ class Calendar {
             case 1: return "February";
             case 2: return "March";
             case 3: return "April";
-            case 4: return "Maj";
+            case 4: return "May";
             case 5: return "June";
             case 6: return "July";
             case 7: return "August";
@@ -71,7 +71,7 @@ class Calendar {
     getEvents(day = this.curDay, month = this.curMonth, year = this.curYear) {
         let events = [];
         this.events.forEach(e => {
-            if (e.day == day && e.month == month && e.year == year) {
+            if (e.day == day && e.month == month && (e.year == year || e.loop)) {
                 events.push(e);
             }
         })
