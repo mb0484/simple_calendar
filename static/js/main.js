@@ -11,12 +11,12 @@ window.onload = function() {
     // load calendar events
     fetch(FILE_URL)
         .then(response => response.text())
-        .then(text => fillCalendarWithEvents(text))
+        .then(text => fillCalendarWithEvents(text, constructCalendar))
 
     constructCalendar();
 };
 
-function fillCalendarWithEvents(eventData) {
+function fillCalendarWithEvents(eventData, callback = undefined) {
     for (let row of eventData.split("\n")) {
         // Get event date
         let day = row.split(";")[0].split(" ")[0];
@@ -31,6 +31,8 @@ function fillCalendarWithEvents(eventData) {
 
         calendar.addEvent(new CalendarEvent(day, month, year, description, isLoopedEvent));
     }
+
+    callback && callback();
 }
 
 function putInNextMonth() {
@@ -49,7 +51,7 @@ function changeCurDate() {
     let year = parseInt($("#year_input").val());
 
     // In our application months are 0 indexed so we have to add 1
-    let curDate = new Date(year + "-" + (month + 1) + "-" + day);
+    let curDate = new Date(year + "/" + (month + 1) + "/" + day);
 
     if (curDate.toString() !== "Invalid Date") {
         calendar.curDay = day;
